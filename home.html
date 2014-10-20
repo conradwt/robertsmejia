@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035) -->
+<html itemscope="" itemtype="http://schema.org/WebPage" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" class="" static="yes"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="beacon.js" async=""></script><script type="text/javascript" async="" src="javascripts/keen-2.1.0-min.js"></script><script type="text/javascript" async="" src="javascripts/ga.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-6.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"74f55de04c","applicationID":"4870173","transactionName":"IlcLQxBeWFoHShYTWAZdFhgRWVtBPUtNAk0IWw==","queueTime":0,"applicationTime":26,"ttGuid":"","agentToken":null,"agent":"javascripts/nr-476.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQcOWVBADAsHVFBVBA=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+
+
+<title>Robert S. Mejia - Portfolio</title>
+<script phantom="keep">
+window.$S={};$S.global_conf={"environment":"production","host_suffix":"strikingly.com","SEGMENTIO_API_KEY":"eb3txa37hi","FACEBOOK_APP_ID":"138736959550286","BOBCAT_ANALYTICS_POST_URL":"//stats.b.strikingly.com","locale":"en","in_china":false,"browser_locale":"en"};$S.conf={"pages_show_static_path":"//assets.strikingly.com/assets/pages_show_static-993647a5685f611f741990116445655b.js","keenio_collection":"strikingly_pageviews","keenio_pbs_impression_collection":"strikingly_pbs_impression","keenio_pbs_conversion_collection":"strikingly_pbs_conversion","keenio_pageservice_imageshare_collection":"strikingly_pageservice_imageshare","headless_render":true};$S.page_meta={"id":267277,"permalink":"robertsmejia","created_at":"2014-09-21T21:19:50-07:00","user":{"membership":"pro","id":204198},"category":{"name":"portfolio","id":6},"social_media_config":{"url":"","title":"Robert S. Mejia - Portfolio","image":"http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_300,q_90,w_300/pu1po3ksodsreaxw370c.png","description":"This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  ","fb_app_id":"138736959550286"},"keenio_config":{"keenio_project_id":"5317e03605cd66236a000002","keenio_write_key":"efd460f8e282891930ff1957321c12b64a6db50694fd0b4a01d01f347920dfa3ce48e8ca249b5ea9917f98865696cfc39bc6814e4743c39af0a4720bb711627d9cf0fe63d5d52c3866c9c1c3178aaec6cbfc1a9ab62a3c9a827d2846a9be93ecf4ee3d61ebee8baaa6a1d735bff6e37b"},"show_strikingly_logo":false,"show_navigation_buttons":true,"slide_names":["Title","Jack - WF","Joe","Joe - WF","Joe - AO","Creature ","Creature - WF","Creature  - AO","UI/UX Design","Projects","Architecture","About Me","Contact Me"],"social_media":{"type":"SocialMediaList","id":null,"link_list":[{"type":"Facebook","id":null,"url":"","link_url":"","share_text":"This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  ","app_id":138736959550286,"show_button":null},{"type":"Twitter","id":null,"url":"","link_url":"","share_text":"Saw an awesome one pager. Check it out @strikingly","show_button":null},{"type":"GPlus","id":null,"url":"","link_url":"","share_text":"This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  ","show_button":null}],"button_list":[{"type":"Facebook","id":null,"url":"","link_url":"","share_text":"This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  ","app_id":138736959550286,"show_button":true},{"type":"Twitter","id":null,"url":"","link_url":"","share_text":"Saw an awesome one pager. Check it out @strikingly","show_button":true},{"type":"GPlus","id":null,"url":"","link_url":"","share_text":"This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  ","show_button":true},{"type":"LinkedIn","id":null,"url":"","link_url":"","share_text":"This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  ","show_button":true}]},"has_optimizely":false,"optimizely_experiment_id":null,"premium_slide_list":[],"premium_app_list":["html","ecwid","mailchimp","celery","locu"],"theme":{"name":"perspective"},"services":[],"strk_upvt":"OTN5WnBMdVFkYWYvM0VKYjR0OXM2SUtGME91ZGJETE1TRURXU1NDcjYyeUoyVEk3bXVXSXJUei96ZnFZTzlPaXMrSnZnU1U5NUNJU2VvWk1jVlhMV2Qzd0E4OGNFYXZVMDV0NzNiZUNWcmh1UXo5TDdtdmpYL1NhejVCWnVpOUpRVzFuWmNsK2xPNitRVi93bVhTZ01RPT0tLWFSWGhOYWNINXJsa2c1Rnl5bHZBNkE9PQ==--cc8c09caaccb4fe985a406e51c95d3dcf09d7ca9"};$S.app_instances=[];
+</script>
+
+<meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport">
+<link href="css" media="screen" rel="stylesheet" type="text/css">
+<link href="main_show-871b04f0f44dd64668c5ce1a1553ee02.css" media="screen" rel="stylesheet" type="text/css"><link href="css(1)" media="screen" rel="stylesheet" type="text/css"><link href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_64,w_64/cswgqapihmrzkpilnjpg.png" rel="shortcut icon" type="image/x-icon">
+<link href="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_60,q_90,w_60/pu1po3ksodsreaxw370c.png" rel="apple-touch-icon" sizes="60x60">
+<link href="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_76,q_90,w_76/pu1po3ksodsreaxw370c.png" rel="apple-touch-icon" sizes="76x76">
+<link href="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_120,q_90,w_120/pu1po3ksodsreaxw370c.png" rel="apple-touch-icon" sizes="120x120">
+<link href="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_152,q_90,w_152/pu1po3ksodsreaxw370c.png" rel="apple-touch-icon" sizes="152x152">
+<meta content="Robert S. Mejia - Portfolio" property="og:title">
+<meta content="" property="og:url">
+<meta content="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_300,q_90,w_300/pu1po3ksodsreaxw370c.png" property="og:image">
+<meta content="Robert S. Mejia - Portfolio" property="og:site_name">
+<meta content="This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  " property="og:description">
+<meta content="Robert S. Mejia - Portfolio" itemprop="name">
+<meta content="This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  " itemprop="description">
+<meta content="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_300,q_90,w_300/pu1po3ksodsreaxw370c.png" itemprop="image">
+<meta content="summary" name="twitter:card">
+<meta content="Robert S. Mejia - Portfolio" name="twitter:title">
+<meta content="This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  " name="twitter:description">
+<meta content="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_300,q_90,w_300/pu1po3ksodsreaxw370c.png" name="twitter:image">
+<meta content="This is my 3D Website Portfolio, I will uploading my best work in organic, hard surface, and prop modeling. My main focus is creating high poly to low poly modeling and hand painting realistic textures.  " name="description">
+<meta content="zbrush, maya, mari, mudbox, 3d, artist, character, mudbox, autodesk, robert, unity 3d, character artist, 3d artist, modeler, creature, organic, hard surface, props, games, polygon, video games, xbox, playstation, ps4, xbox one, ios, android, mobile, tablet" name="keywords">
+<meta content="//assets.strikingly.com" name="asset-url">
+
+<meta name="mode">
+<meta content="{&quot;permalink&quot;:&quot;robertsmejia&quot;,&quot;id&quot;:267277}" name="support-helper">
+<meta content="{}" name="site-configs">
+<link href="Robert S. Mejia - Portfolio.html" rel="canonical">
+
+
+
+<script phantom="keep">
+if (!console) var console = {
+log: function() {},
+warn: function() {},
+error: function() {}
+};
+isHeadlessRendering = function() {
+return ($S.conf.headless_render && document.getElementsByTagName('html')[0].getAttribute('static') != 'yes');
+}
+var _gaq = _gaq || [];
+if (!isHeadlessRendering() && !$S.conf.is_screenshot_rendering) {
+/* load errorception */
+var _errs=["518ac810441fb4b7180002fa"];(function(a,b){a.onerror=function(){_errs.push(arguments)};
+var d=function(){var a=b.createElement("script"),c=b.getElementsByTagName("script")[0];
+a.src="//d15qhc0lu1ghnk.cloudfront.net/beacon.js";a.async=!0;
+c.parentNode.insertBefore(a,c)};a.addEventListener?a.addEventListener("load",d,!1):
+a.attachEvent("onload",d)})(window,document);
+_gaq.push(['_setAccount', 'UA-25124444-6']);
+_gaq.push(['_setDomainName', 'strikingly.com']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+// configuration for keen.io
+var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("javascripts/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+
+// Configure the Keen object with your Project ID and (optional) access keys.
+Keen.configure({
+projectId: $S.page_meta.keenio_config.keenio_project_id,
+writeKey: $S.page_meta.keenio_config.keenio_write_key // required for sending events
+});
+}
+
+
+</script>
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style><style type="text/css"></style><style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
+<body class="show" id="pages" spellcheck="false" ontouchstart="" screen_capture_injected="true" data-pinterest-extension-installed="cr1.35"><script phantom="keep" src="javascripts/jquery.min.js" type="text/javascript"></script>
+<script phantom="keep">
+window.jQuery || document.write('<script src="javascripts/jquery-78ef9afcc2199a30e3ea419c9be7e2cb.js"><\/script>')
+</script>
+
+
+
+
+<script src="javascripts/main_static-9ceeab0f1aa9bc42b09930f7efafb42b.js" type="text/javascript"></script>
+
+
+<div class="s-box-transparent s-nav-wide" id="s-content">
+<div id="perspective-cover" style="opacity: 0; display: none;"></div>
+<div class="headercontainer navigator strikingly-fixed">
+<div class="header">
+<div data-bind-page="visible: showNav()" id="nav">
+<ul class="s-nav">
+<span data-bind-page="template: {name:&#39;navbarItemTemplate&#39;, foreach: slides}"><!----><li style="display: none; "> <a class="s-nav-item" href="#title"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Title</span> </a> </li><!----><li> <a class="s-nav-item" href="#jack-wf"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Jack - WF</span> </a> </li><!----><li> <a class="s-nav-item" href="#joe"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Joe</span> </a> </li><!----><li> <a class="s-nav-item" href="#joe-wf"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Joe - WF</span> </a> </li><!----><li style="display: none; "> <a class="s-nav-item" href="#joe-ao"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Joe - AO</span> </a> </li><!----><li> <a class="s-nav-item" href="#creature"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Creature </span> </a> </li><!----><li> <a class="s-nav-item" href="#creature-wf"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Creature - WF</span> </a> </li><!----><li> <a class="s-nav-item" href="#creature-ao"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Creature  - AO</span> </a> </li><!----><li> <a class="s-nav-item" href="#ui-ux-design"> <div class="icon"> <div class="inner"></div> </div> <span class="label">UI/UX Design</span> </a> </li><!----><li> <a class="s-nav-item" href="#projects"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Projects</span> </a> </li><!----><li> <a class="s-nav-item" href="#architecture"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Architecture</span> </a> </li><!----><li> <a class="s-nav-item" href="#about-me"> <div class="icon"> <div class="inner"></div> </div> <span class="label">About Me</span> </a> </li><!----><li> <a class="s-nav-item" href="#contact-me"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Contact Me</span> </a> </li></span>
+<span data-bind-page="template: {name:&#39;navbarLinkTemplate&#39;, foreach: submenu.list}"><li> <a href="http://robertsmejia.webatu.com/WebPlayer.html" target="_blank"> <div class="icon"> <div class="inner"></div> </div> <span class="label">UI/UX Design</span> </a> </li><li> <a href="http://www.robertsmejia.webatu.com/WebPlayer1.html" target="_blank"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Game Development</span> </a> </li><li> <a href="https://play.google.com/store/search?q=marblelinth%20lt&c=apps&hl=en" target="_blank"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Marblelinth</span> </a> </li><li> <a href="https://sketchfab.com/robertsmejia" target="_blank"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Sketchfab</span> </a> </li><li> <a href="http://www.robertsmejia.blogspot.com/" target="_blank"> <div class="icon"> <div class="inner"></div> </div> <span class="label">Blog</span> </a> </li></span>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<ul class="slides">
+<li class="slide selected">
+<a class="section-anchor" data-scroll-name="#1"></a>
+<a class="section-name-anchor" data-section-name="Title"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/bomocubc9i4pyzuioauf.jpg); background-size: contain; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/bomocubc9i4pyzuioauf.jpg">
+<div class="vertical-middle box" style="top: 436px;">
+<div class="container">
+<div class="sixteen columns">
+<h1 class="center"><div data-component="text" data-name="text1" data-text-type="title" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.titleFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.titleFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>ROBERT S. MEJIA - PORTFOLIO</div></div></div></h1>
+<div class="p center"><div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>3D Artist - Game Developer</div></div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#2"></a>
+<a class="section-name-anchor" data-section-name="Jack - WF"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/hxlf3tltsz3yzuwjueq5.jpg); background-size: contain; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/hxlf3tltsz3yzuwjueq5.jpg">
+<div class="top box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title.hasContentOrIsEditMode() || subtitle.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title.isState(&#39;editor&#39;) || !title.hasContent()), htmlValue: title.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle.isState(&#39;editor&#39;) || !subtitle.hasContent()), htmlValue: subtitle.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title2.hasContentOrIsEditMode() || subtitle2.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title2" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title2.isState(&#39;editor&#39;) || !title2.hasContent()), htmlValue: title2.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle2.isState(&#39;editor&#39;) || !subtitle2.hasContent()), htmlValue: subtitle2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+</div>
+</div>
+<div class="bottom box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title3.hasContentOrIsEditMode() || subtitle3.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title3" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title3.isState(&#39;editor&#39;) || !title3.hasContent()), htmlValue: title3.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle3" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle3.isState(&#39;editor&#39;) || !subtitle3.hasContent()), htmlValue: subtitle3.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align" data-bind="css: {&#39;fixed-hidden&#39;: !(title4.hasContentOrIsEditMode() || subtitle4.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title4" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title4.isState(&#39;editor&#39;) || !title4.hasContent()), htmlValue: title4.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Jack</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle4" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle4.isState(&#39;editor&#39;) || !subtitle4.hasContent()), htmlValue: subtitle4.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>Wireframe</div></div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#3"></a>
+<a class="section-name-anchor" data-section-name="Joe"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/a0ztv7oy95znozjh2uqm.jpg); background-size: contain; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/a0ztv7oy95znozjh2uqm.jpg">
+<div class="top box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title.hasContentOrIsEditMode() || subtitle.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title.isState(&#39;editor&#39;) || !title.hasContent()), htmlValue: title.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle.isState(&#39;editor&#39;) || !subtitle.hasContent()), htmlValue: subtitle.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title2.hasContentOrIsEditMode() || subtitle2.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title2" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title2.isState(&#39;editor&#39;) || !title2.hasContent()), htmlValue: title2.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle2.isState(&#39;editor&#39;) || !subtitle2.hasContent()), htmlValue: subtitle2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+</div>
+</div>
+<div class="bottom box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title3.hasContentOrIsEditMode() || subtitle3.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title3" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title3.isState(&#39;editor&#39;) || !title3.hasContent()), htmlValue: title3.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle3" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle3.isState(&#39;editor&#39;) || !subtitle3.hasContent()), htmlValue: subtitle3.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align" data-bind="css: {&#39;fixed-hidden&#39;: !(title4.hasContentOrIsEditMode() || subtitle4.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title4" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title4.isState(&#39;editor&#39;) || !title4.hasContent()), htmlValue: title4.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Joe</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle4" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle4.isState(&#39;editor&#39;) || !subtitle4.hasContent()), htmlValue: subtitle4.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#4"></a>
+<a class="section-name-anchor" data-section-name="Joe - WF"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/bdf94qcaopds2fpmej2i.jpg); background-size: contain; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/bdf94qcaopds2fpmej2i.jpg">
+<div class="top box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title.hasContentOrIsEditMode() || subtitle.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title.isState(&#39;editor&#39;) || !title.hasContent()), htmlValue: title.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle.isState(&#39;editor&#39;) || !subtitle.hasContent()), htmlValue: subtitle.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title2.hasContentOrIsEditMode() || subtitle2.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title2" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title2.isState(&#39;editor&#39;) || !title2.hasContent()), htmlValue: title2.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle2.isState(&#39;editor&#39;) || !subtitle2.hasContent()), htmlValue: subtitle2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+</div>
+</div>
+<div class="bottom box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title3.hasContentOrIsEditMode() || subtitle3.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title3" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title3.isState(&#39;editor&#39;) || !title3.hasContent()), htmlValue: title3.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle3" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle3.isState(&#39;editor&#39;) || !subtitle3.hasContent()), htmlValue: subtitle3.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align" data-bind="css: {&#39;fixed-hidden&#39;: !(title4.hasContentOrIsEditMode() || subtitle4.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title4" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title4.isState(&#39;editor&#39;) || !title4.hasContent()), htmlValue: title4.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Joe</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle4" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle4.isState(&#39;editor&#39;) || !subtitle4.hasContent()), htmlValue: subtitle4.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>Wireframe</div></div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#5"></a>
+<a class="section-name-anchor" data-section-name="Joe - AO"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/hust0ydjm6j9wdyhws41.jpg); background-size: contain; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/hust0ydjm6j9wdyhws41.jpg">
+<div class="top box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title.hasContentOrIsEditMode() || subtitle.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title.isState(&#39;editor&#39;) || !title.hasContent()), htmlValue: title.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle.isState(&#39;editor&#39;) || !subtitle.hasContent()), htmlValue: subtitle.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title2.hasContentOrIsEditMode() || subtitle2.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title2" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title2.isState(&#39;editor&#39;) || !title2.hasContent()), htmlValue: title2.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle2.isState(&#39;editor&#39;) || !subtitle2.hasContent()), htmlValue: subtitle2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+</div>
+</div>
+<div class="bottom box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title3.hasContentOrIsEditMode() || subtitle3.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title3" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title3.isState(&#39;editor&#39;) || !title3.hasContent()), htmlValue: title3.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle3" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle3.isState(&#39;editor&#39;) || !subtitle3.hasContent()), htmlValue: subtitle3.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align" data-bind="css: {&#39;fixed-hidden&#39;: !(title4.hasContentOrIsEditMode() || subtitle4.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title4" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title4.isState(&#39;editor&#39;) || !title4.hasContent()), htmlValue: title4.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Joe</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle4" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle4.isState(&#39;editor&#39;) || !subtitle4.hasContent()), htmlValue: subtitle4.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>Ambient Occlusion</div></div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#6"></a>
+<a class="section-name-anchor" data-section-name="Creature "></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/junpqswalwpmy3h6hp3u.jpg); background-size: contain; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/junpqswalwpmy3h6hp3u.jpg">
+<div class="top box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title.hasContentOrIsEditMode() || subtitle.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title.isState(&#39;editor&#39;) || !title.hasContent()), htmlValue: title.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle.isState(&#39;editor&#39;) || !subtitle.hasContent()), htmlValue: subtitle.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title2.hasContentOrIsEditMode() || subtitle2.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title2" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title2.isState(&#39;editor&#39;) || !title2.hasContent()), htmlValue: title2.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle2.isState(&#39;editor&#39;) || !subtitle2.hasContent()), htmlValue: subtitle2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+</div>
+</div>
+<div class="bottom box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title3.hasContentOrIsEditMode() || subtitle3.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title3" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title3.isState(&#39;editor&#39;) || !title3.hasContent()), htmlValue: title3.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle3" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle3.isState(&#39;editor&#39;) || !subtitle3.hasContent()), htmlValue: subtitle3.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align" data-bind="css: {&#39;fixed-hidden&#39;: !(title4.hasContentOrIsEditMode() || subtitle4.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title4" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title4.isState(&#39;editor&#39;) || !title4.hasContent()), htmlValue: title4.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Creature</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle4" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle4.isState(&#39;editor&#39;) || !subtitle4.hasContent()), htmlValue: subtitle4.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#7"></a>
+<a class="section-name-anchor" data-section-name="Creature - WF"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/kex2cvbtwqvmlpyvzizs.jpg); background-size: contain; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/kex2cvbtwqvmlpyvzizs.jpg">
+<div class="top box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title.hasContentOrIsEditMode() || subtitle.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title.isState(&#39;editor&#39;) || !title.hasContent()), htmlValue: title.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle.isState(&#39;editor&#39;) || !subtitle.hasContent()), htmlValue: subtitle.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title2.hasContentOrIsEditMode() || subtitle2.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title2" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title2.isState(&#39;editor&#39;) || !title2.hasContent()), htmlValue: title2.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle2.isState(&#39;editor&#39;) || !subtitle2.hasContent()), htmlValue: subtitle2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+</div>
+</div>
+<div class="bottom box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title3.hasContentOrIsEditMode() || subtitle3.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title3" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title3.isState(&#39;editor&#39;) || !title3.hasContent()), htmlValue: title3.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle3" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle3.isState(&#39;editor&#39;) || !subtitle3.hasContent()), htmlValue: subtitle3.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align" data-bind="css: {&#39;fixed-hidden&#39;: !(title4.hasContentOrIsEditMode() || subtitle4.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title4" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title4.isState(&#39;editor&#39;) || !title4.hasContent()), htmlValue: title4.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Creature</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle4" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle4.isState(&#39;editor&#39;) || !subtitle4.hasContent()), htmlValue: subtitle4.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>Wireframe</div></div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#8"></a>
+<a class="section-name-anchor" data-section-name="Creature  - AO"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/tozgxavci3ngpzprklak.jpg); background-size: contain; background-position: 49% 50%; background-repeat: no-repeat;" data-background="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_progressive,h_1200,q_90,w_2000/tozgxavci3ngpzprklak.jpg">
+<div class="top box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title.hasContentOrIsEditMode() || subtitle.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title.isState(&#39;editor&#39;) || !title.hasContent()), htmlValue: title.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle.isState(&#39;editor&#39;) || !subtitle.hasContent()), htmlValue: subtitle.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align" data-bind="css: {&#39;fixed-hidden&#39;: !(title2.hasContentOrIsEditMode() || subtitle2.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title2" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title2.isState(&#39;editor&#39;) || !title2.hasContent()), htmlValue: title2.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle2.isState(&#39;editor&#39;) || !subtitle2.hasContent()), htmlValue: subtitle2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div style="text-align: right;">&nbsp;</div></div></div></div>
+</div>
+</div>
+</div>
+<div class="bottom box fixed-relative">
+<div class="container">
+<div class="eight columns fixed-hidden" data-bind="css: {&#39;fixed-hidden&#39;: !(title3.hasContentOrIsEditMode() || subtitle3.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title3" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title3.isState(&#39;editor&#39;) || !title3.hasContent()), htmlValue: title3.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Brandon; "></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle3" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle3.isState(&#39;editor&#39;) || !subtitle3.hasContent()), htmlValue: subtitle3.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+</div>
+<div class="eight columns right-align" data-bind="css: {&#39;fixed-hidden&#39;: !(title4.hasContentOrIsEditMode() || subtitle4.hasContentOrIsEditMode())} ">
+<h1><div data-component="text" data-name="title4" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(title4.isState(&#39;editor&#39;) || !title4.hasContent()), htmlValue: title4.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Creature</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="subtitle4" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(subtitle4.isState(&#39;editor&#39;) || !subtitle4.hasContent()), htmlValue: subtitle4.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>Wireframe</div></div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#9"></a>
+<a class="section-name-anchor" data-section-name="UI/UX Design"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg); background-size: auto; background-position: 49% 50%; background-repeat: repeat;" data-background="http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg">
+
+<div class="container">
+<div class="fourteen columns offset-one">
+<div class="content-box">
+<h1><div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>UI/UX Design</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="display: none; font-family: Raleway; "></div></div></div>
+<br>
+<div class="gallery lightbox" data-bind="css: { &#39;left-align&#39;: text1.isLeftAligned(), &#39;right-align&#39;: text1.isRightAligned(), &#39;center&#39;: text1.isCenterAligned() }">
+<div class="gallery content images" data-bind="sortableList: gallery.sources, template: {
+      foreach: gallery.sources,
+        name: &#39;lightboxImageTemplateShow&#39;,
+        afterRender: function(elem) {
+          window.setTimeout(function () {
+            gallery.afterRender($(elem).filter(&#39;.thumb&#39;));
+          }, 1000);
+        }
+      }"><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/MainPage_srgjks.png" rel="gallery_1"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/MainPage_srgjks.png" alt="Main Page" title="Main Page" data-description="UI for Marblelinth App"> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Splash_sfxphe.png" rel="gallery_1"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Splash_sfxphe.png" alt="Splash" title="Splash" data-description="Splash page for Marblelinth App"> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/GameOver_enwaur.png" rel="gallery_1"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/GameOver_enwaur.png" alt="Game Over" title="Game Over" data-description="UI for Marblelinth App"> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Login_i0b4f1.png" rel="gallery_1"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Login_i0b4f1.png" alt="Login" title="Login" data-description="Login GUI"> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Settings_qagzpu.png" rel="gallery_1"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Settings_qagzpu.png" alt="Settings" title="Settings" data-description="Settings GUI"> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Pause_u7e2hb.png" rel="gallery_1"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Pause_u7e2hb.png" alt="Pause" title="Pause" data-description="Pause GUI"> </a> </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#10"></a>
+<a class="section-name-anchor" data-section-name="Projects"></a>
+<div class="widecontainer section column-listing resize strikingly-light-text lazy-background image" data-bind="&#39;className&#39;: background1.getSelectedClassName(), &#39;style&#39;: background1.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true, &#39;image&#39;:background1.hasContent(), &quot;white&quot;:!background1.hasContent()}, &#39;attr&#39;: {&#39;data-background&#39;: background1.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg); background-size: auto; background-position: 49% 50%; background-repeat: repeat;" data-background="http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg">
+
+<div class="container">
+<div class="fourteen columns offset-one">
+<div class="content-box">
+<h1 data-bind="visible: text1.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Projects</div></div></div>
+</h1>
+<div class="p" data-bind="visible: text2.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>Examples of work.</div></div></div>
+</div>
+<div class="listing s-mh">
+<div class="repeatable1 content repeatable-component" data-bind="template: {
+        foreach: repeatable1.list,
+        name: &#39;column_block&#39;
+      }, sortableRepeatable: repeatable1.list"><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="http://www.robertsmejia.webatu.com/WebPlayer.html" target="_blank"> <img alt="UI/UX Design" src="40.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/flat-modern/40.png" title="UI/UX Design" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>UI/UX Design</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Unity Example</div></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="http://www.robertsmejia.webatu.com/WebPlayer2.html" target="_blank"> <img alt="Game Development" src="30.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/flat-modern/30.png" title="Game Development" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Game Development</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Unity Example</div></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="http://www.robertsmejia.blogspot.com/" target="_blank"> <img alt="Art Blog" src="75.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/flat-modern/75.png" title="Art Blog" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Art Blog</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Art Work</div></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="http://www.robertsmejia.webatu.com/WebPlayer1.html" target="_blank"> <img alt="Unity Example" src="44.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/flat-modern/44.png" title="Unity Example" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Tonka&nbsp;</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Unity Example</div></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="https://sketchfab.com/robertsmejia" target="_blank"> <img alt="Sketchfab" src="92.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/flat-modern/92.png" title="Sketchfab" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Sketchfab</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Live 3D</div></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="https://play.google.com/store/search?q=marblelinth%20lt&c=apps&hl=en" target="_blank"> <img alt="Mablelinth" src="94.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/flat-modern/94.png" title="Mablelinth" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Marblelinth</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Published Game App</div></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix"></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#11"></a>
+<a class="section-name-anchor" data-section-name="Architecture"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg); background-size: auto; background-position: 49% 50%; background-repeat: repeat;" data-background="http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg">
+
+<div class="container">
+<div class="fourteen columns offset-one">
+<div class="content-box">
+<h1><div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Architecture</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>School Projects</div></div></div></div>
+<br>
+<div class="gallery lightbox" data-bind="css: { &#39;left-align&#39;: text1.isLeftAligned(), &#39;right-align&#39;: text1.isRightAligned(), &#39;center&#39;: text1.isCenterAligned() }">
+<div class="gallery content images" data-bind="sortableList: gallery.sources, template: {
+      foreach: gallery.sources,
+        name: &#39;lightboxImageTemplateShow&#39;,
+        afterRender: function(elem) {
+          window.setTimeout(function () {
+            gallery.afterRender($(elem).filter(&#39;.thumb&#39;));
+          }, 1000);
+        }
+      }"><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project1_Page_1_d6hq2u.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project1_Page_1_d6hq2u.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project1_Page_2_nk7zqc.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project1_Page_2_nk7zqc.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project1_Page_3_zd1mvo.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project1_Page_3_zd1mvo.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project1_Page_4_gn7qok.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project1_Page_4_gn7qok.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project2_Page_1_gi7jxb.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project2_Page_1_gi7jxb.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project2_Page_2_unv0ig.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project2_Page_2_unv0ig.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project2_Page_3_uhtsvj.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project2_Page_3_uhtsvj.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project2_Page_4_guoz4l.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project2_Page_4_guoz4l.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project2_Page_5_yvye3y.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project2_Page_5_yvye3y.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project2_Page_6_ufh52m.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project2_Page_6_ufh52m.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project2_Page_7_dipgx0.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project2_Page_7_dipgx0.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project2_Page_8_j1svcu.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project2_Page_8_j1svcu.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/Project2_Page_9_k6nc4c.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/Project2_Page_9_k6nc4c.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/subtraction_bldg_FL-Elev_azc60r.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/subtraction_bldg_FL-Elev_azc60r.png" alt="" title="" data-description=""> </a> </div><div class="thumb"> <a class="item" href="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_900,w_1200/v1/204198/subtraction_bldg_Section_unadny.png" rel="gallery_2"> <img class="lazy lazy-gallery" data-original="http://res.cloudinary.com/hrscywv4p/image/upload/c_fill,g_faces:center,h_200,w_200/v1/204198/subtraction_bldg_Section_unadny.png" alt="" title="" data-description=""> </a> </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#12"></a>
+<a class="section-name-anchor" data-section-name="About Me"></a>
+<div class="widecontainer resize strikingly-light-text lazy-background" data-bind="&#39;className&#39;: background.getSelectedClassName(), &#39;style&#39;: background.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true}, &#39;attr&#39;: {&#39;data-background&#39;: background.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg); background-size: auto; background-position: 49% 50%; background-repeat: repeat;" data-background="http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg">
+<div class="container">
+<div class="eight columns">
+&nbsp;
+</div>
+<div class="eight columns">
+<div class="content-box">
+<h1><div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>About Me</div></div></div></h1>
+<div class="p"><div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div><span style="font-size: 100%;">Hello, my name is Robert S. Mejia. &nbsp;I am a 3D Artist/Game Developer living in Downey, California. My goal is to obtain a position where I can utilize my traditional and technical art skills in assisting in the production of quality work at a quality studio. &nbsp;You can view or download my <strong><a title="Resume" href="http://robertsmejia.com/Resume" target="_self">RESUME</a>.</strong></span></div>
+<div><span style="font-size: 100%;">&nbsp;</span></div>
+<div><span style="text-decoration: underline; font-size: 100%;"><strong>EXPERIENCE</strong></span></div>
+<div><span style="font-size: 100%;">&nbsp;</span></div>
+<div><span style="font-size: 100%;"><strong>Technical Skills</strong></span></div>
+<div style="text-align: left;">
+<ul>
+<li><span style="font-size: 100%;">Maya, 3ds Max, Mudbox, ZBrush, Photoshop, Illustrator,&nbsp;3D-Coat, xNormal, DDO, Mari, Topogun, UVLayout, Unity 3D, Final Cut Studio, Premiere, &nbsp;After Effects,&nbsp;AutoCAD, Revit, FormZ, Javascript, CSharp&nbsp;</span></li>
+</ul>
+</div>
+<div><span style="font-size: 100%;">&nbsp;</span></div>
+<div><span style="font-size: 100%;"><strong>Qualifications</strong></span></div>
+<div>
+<ul>
+<li><span style="font-size: 100%;">Strong traditional fine art skills - illustration, painting, composition, human anatomy/organic forms, color theory, perspective, 2D &amp; 3D design</span></li>
+<li><span style="font-size: 100%;">Video game product development - high and low poly modeling, organic, hard surface, prop and asset modeling, texture painting, material setup, character skinning, mapping techniques, UV layout, animation, character rigging, model from concepts and a single photograph, UI/UX design</span></li>
+<li><span style="font-size: 100%;">Good communication, organizational, time management, and interpersonal skills</span></li>
+</ul>
+<br>
+<div><span style="font-size: 100%;"><strong>Education&nbsp;</strong></span></div>
+<div>
+<ul style="text-align: left;">
+<li><span style="font-size: 100%;">Santa Monica College, Santa Monica, CA, USA</span></li>
+</ul>
+<span style="font-size: 100%;">&nbsp; &nbsp; &nbsp; &nbsp; - 3D Animation for Film and Game Development</span><br>
+<ul>
+<li><span style="font-size: 100%;">Mt. San Antonio College, Walnut, CA, USA</span></li>
+</ul>
+&nbsp; &nbsp; &nbsp; &nbsp; - 3D Animation, Architectural Technology</div>
+</div></div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</li>
+<li class="slide">
+<a class="section-anchor" data-scroll-name="#13"></a>
+<a class="section-name-anchor" data-section-name="Contact Me"></a>
+<div class="widecontainer section column-listing resize strikingly-light-text lazy-background image" data-bind="&#39;className&#39;: background1.getSelectedClassName(), &#39;style&#39;: background1.selectedStyleLazy(), &#39;css&#39;:{&#39;lazy&#39;:true, &#39;lazy-background&#39;:true, &#39;image&#39;:background1.hasContent(), &quot;white&quot;:!background1.hasContent()}, &#39;attr&#39;: {&#39;data-background&#39;: background1.assetUrl()}" style="height: auto; min-height: 772px; background-image: url(http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg); background-size: auto; background-position: 49% 50%; background-repeat: repeat;" data-background="http://assets.strikingly.com/static/backgrounds/subtle/pentagon.jpg">
+
+<div class="container">
+<div class="fourteen columns offset-one">
+<div class="content-box">
+<h1 data-bind="visible: text1.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text1" data-text-type="heading" class="text-component"><div class="content content2" data-bind="visible: !(text1.isState(&#39;editor&#39;) || !text1.hasContent()), htmlValue: text1.value, style: (window.edit_page.data.headingFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.headingFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Brandon; "><div>Contact - Social Media</div></div></div>
+</h1>
+<div class="p" data-bind="visible: text2.hasContentOrIsEditMode()">
+<div data-component="text" data-name="text2" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(text2.isState(&#39;editor&#39;) || !text2.hasContent()), htmlValue: text2.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>Living in beautiful sunny California, please don't hesitate to contact me by email or by phone.</div></div></div>
+</div>
+<div class="listing s-mh">
+<div class="repeatable1 content repeatable-component" data-bind="template: {
+        foreach: repeatable1.list,
+        name: &#39;column_block&#39;
+      }, sortableRepeatable: repeatable1.list"><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="mailto:robert@robertsmejia.com" target="_blank"> <img alt="email" src="email-icon.png" class="lazy-img" data-original="//assets.strikingly.com/assets/themes/onyx_new/email-icon.png" title="email" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Email</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div style="text-align: center;">robert@</div>
+<div style="text-align: center;">robertsmejia.com</div></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="tel:1-323-490-6352" target="_blank"> <img alt="Phone" src="phone-icon.png" class="lazy-img" data-original="//assets.strikingly.com/assets/themes/onyx_new/phone-icon.png" title="Phone" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Phone</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>(323)</div>
+<div>490-6352</div></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="https://www.google.com/maps/place/Downey,+CA/@33.9376769,-118.1304229,13z/data=!3m1!4b1!4m2!3m1!1s0x80c2cc4c1e082291:0x9140a72616789d0a?hl=en" target="_blank"> <img alt="Downey, CA, USA" src="location-icon.png" class="lazy-img" data-original="//assets.strikingly.com/assets/themes/onyx_new/location-icon.png" title="Downey, CA, USA" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Location</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Downey, California, USA</div></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="http://www.linkedin.com/pub/robert-s-mejia/13/744/160/" target="_blank"> <img alt="Linkedin" src="linkedin-icon.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/brown/linkedin-icon.png" title="Linkedin" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>LinkedIn</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="display: none; font-family: Raleway; "></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="http://www.robertsmejia.com/Resume" target="_blank"> <img alt="Resume" src="100.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/flat-circle-160/100.png" title="Resume" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Resume</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="display: none; font-family: Raleway; "></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="https://twitter.com/MejiaRobertS" target="_blank"> <img alt="Twitter" src="twitter-icon.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/brown/twitter-icon.png" title="Twitter" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Twitter</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="display: none; font-family: Raleway; "></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="https://www.google.com/+RobertMejia3DArtist" target="_blank"> <img alt="Google+" src="gplus-icon.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/brown/gplus-icon.png" title="Google+" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Google+</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="display: none; font-family: Raleway; "></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="https://vimeo.com/robertsmejia" target="_blank"> <img alt="Vimeo" src="vimeo-icon.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/brown/vimeo-icon.png" title="Vimeo" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Vimeo</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="display: none; font-family: Raleway; "></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix" style="display: none; "></div><!----><div class="item repeatable ib"> <div class="relative center">  <div class="image s-mhi ib" data-component="image" data-name="components.image1" data-use-url="true" style="height: 160px; line-height: 160px;"><div class="content content2" style="display: block; visibility: visible; opacity: 1; ">  <a class="image-link" href="https://www.facebook.com/MejiaRobertS" target="_blank"> <img alt="Facebook" src="fb-icon.png" class="lazy-img" data-original="http://assets.strikingly.com/static/icons/brown/fb-icon.png" title="Facebook" style="position: relative; vertical-align: middle;"> </a>  </div></div> <br> <div class="desc"> <div class="relative"></div> <div class="p intro text-component" data-component="text" data-name="components.text1" data-text-type="body" data-use-font="true"><div class="content content2" style="font-family: Raleway; "><div>Facebook</div></div></div> <div class="p body text-component" data-component="text" data-name="components.text2" data-text-type="body" data-use-font="true"><div class="content content2" style="display: none; font-family: Raleway; "></div></div> </div> </div> <br class="fixed-hidden"> </div> <!----><div class="clearfix"></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</li>
+</ul>
+<div data-bind-page="visible:showFooter" id="footer-container">
+<div class="container" id="footer">
+<div class="eight columns">
+<div class="center-if-fixed" id="footer-social-media">
+<div class="socialMedia content"><div class="social-media-display">
+<ul class="links" data-bind="template: {name:&#39;socialMediaLinks&#39;, foreach: socialMedia.link_list }" style="clear:both;"><!----><li style="display: none; "><!----><a target="_blank" href=""> <img src="facebook-ba595473112c973bf31477eef9108772.png"> </a></li><!----><li style="display: none; "><!----><a target="_blank" href=""> <img src="twitter-bcaaacc86633758fb39b852c945358f2.png"> </a></li><!----><li style="display: none; "><!----><a target="_blank" href=""> <img src="gplus-8f885943b5b4b9c1c4ecf409062183f0.png"> </a></li></ul>
+<ul class="buttons" data-bind="html: socialMedia.mediaListHtml"><div class="col fb-counter"><fb:like href="" send="false" layout="button_count" data-width="100" show_faces="false" font="arial"></fb:like></div><div class="col twitter-counter"><a href="http://twitter.com/share" class="twitter-share-button" data-url="" data-text="Saw an awesome one pager. Check it out @strikingly" data-count="horizontal">Tweet</a></div><div class="col gplus-counter"><g:plusone size="medium" annotation="bubble" href=""></g:plusone></div><div class="col linkedin-counter"><script type="IN/Share" data-showzero="true" data-counter="right" data-url=""></script></div></ul>
+</div>
+</div>
+</div>
+</div>
+<div class="eight columns right-align">
+<div class="center-if-fixed" id="footer-text">
+<div data-component="text" data-name="copyright" data-text-type="body" class="text-component"><div class="content content2" data-bind="visible: !(copyright.isState(&#39;editor&#39;) || !copyright.hasContent()), htmlValue: copyright.value, style: (window.edit_page.data.bodyFont() != &#39;&#39;) ? {fontFamily: window.edit_page.data.bodyFont } : {fontFamily: &#39;inherit&#39; }" style="font-family: Raleway; "><div>Robert S. Mejia © 2014</div></div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="navigation-buttons strikingly-fixed" data-bind-page="visible: showNavigationButtons()">
+<span class="prev" data-bind-page="fadeVisible: !window.slide_navigator.isFirst(), mouseclick: window.slide_navigator.prev" title="Previous Section" style="display: block; visibility: visible; opacity: 0;"></span>
+<span class="next" data-bind-page="fadeVisible: !window.slide_navigator.isLast(), mouseclick: window.slide_navigator.next" title="Next Section" style="visibility: visible; opacity: 1; display: block;"></span>
+</div>
+
+<div class="navbar-drawer strikingly-drawer strikingly-nav-transition">
+<ul id="nav-drawer-list" style="height: 952px;">
+<span data-bind-page="template: {name:&#39;strikinglyNavbarTouchItemTemplate&#39;, foreach: slides}"><!----><li style="display: none; "> <a class="navbar-drawer-item" href="#title">Title</a> </li><!----><li> <a class="navbar-drawer-item" href="#jack-wf">Jack - WF</a> </li><!----><li> <a class="navbar-drawer-item" href="#joe">Joe</a> </li><!----><li> <a class="navbar-drawer-item" href="#joe-wf">Joe - WF</a> </li><!----><li style="display: none; "> <a class="navbar-drawer-item" href="#joe-ao">Joe - AO</a> </li><!----><li> <a class="navbar-drawer-item" href="#creature">Creature </a> </li><!----><li> <a class="navbar-drawer-item" href="#creature-wf">Creature - WF</a> </li><!----><li> <a class="navbar-drawer-item" href="#creature-ao">Creature  - AO</a> </li><!----><li> <a class="navbar-drawer-item" href="#ui-ux-design">UI/UX Design</a> </li><!----><li> <a class="navbar-drawer-item" href="#projects">Projects</a> </li><!----><li> <a class="navbar-drawer-item" href="#architecture">Architecture</a> </li><!----><li> <a class="navbar-drawer-item" href="#about-me">About Me</a> </li><!----><li> <a class="navbar-drawer-item" href="#contact-me">Contact Me</a> </li></span>
+<span data-bind-page="template: {name:&#39;strikinglyNavbarTouchLinkTemplate&#39;, foreach: submenu.list}"><li> <a href="http://robertsmejia.webatu.com/WebPlayer.html" target="_blank">UI/UX Design</a> </li><li> <a href="http://www.robertsmejia.webatu.com/WebPlayer1.html" target="_blank">Game Development</a> </li><li> <a href="https://play.google.com/store/search?q=marblelinth%20lt&c=apps&hl=en" target="_blank">Marblelinth</a> </li><li> <a href="https://sketchfab.com/robertsmejia" target="_blank">Sketchfab</a> </li><li> <a href="http://www.robertsmejia.blogspot.com/" target="_blank">Blog</a> </li></span>
+</ul>
+</div>
+<div class="mobile-actions strikingly-nav-transition" style="height: 56px;">
+<ul id="mobile-action-list">
+<li class="pad">
+<a href="tel:1-323-490-6352">
+<div class="fa fa-phone"></div>
+</a>
+</li>
+<li class="pad">
+<a href="sms:1-323-490-6352" target="_blank">
+<div class="fa fa-comment"></div>
+</a>
+</li>
+<li class="pad">
+<a href="https://maps.google.com/maps?q=Downey%2C%20CA" target="_blank">
+<div class="fa fa-map-marker"></div>
+</a>
+</li>
+<li class="pad">
+<a href="mailto:robert@robertsmejia.com" target="_blank">
+<div class="entypo entypo-mail"></div>
+</a>
+</li>
+</ul>
+</div>
+<div class="navbar-drawer-bar strikingly-nav-transition" data-bind-page="visible: showMobileNav() || true">
+<div class="drawer-container">
+<a class="navbar" data-bind-page="visible: showMobileNav()" href="javascript:void(0);" onclick="Bobcat.TH.toggleDrawer(); return false;">
+<div class="fa fa-bars"></div>
+</a>
+<a class="mobile blue" href="javascript:void(0);" onclick="Bobcat.TH.toggleMobileDrawer(); return false;">
+<div class="entypo entypo-mobile"></div>
+</a>
+<div class="navbar-drawer-title-container">
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ==================== -->
+<!-- = Content Partials = -->
+<!-- ==================== -->
+
+
+
+<div id="fb-root"><div class="facebook_script"><script async="async" src="http://connect.facebook.net/en_US/all.js"></script></div><div class="twitter_script"><script async="async" src="http://platform.twitter.com/widgets.js"></script></div><div class="gplus_script"><script async="async" src="http://apis.google.com/js/plusone.js"></script></div><div class="linkedin_script"><script async="async" src="http://platform.linkedin.com/in.js"></script></div></div>
+
+
+
+<script phantom="keep" src="javascripts/show_init-4a4fedb9f0395b51d59e868672913b05.js" type="text/javascript"></script>
+
+<div class="image-share s-page-layer fill">
+<div class="s-page-shade fill"></div>
+<div class="s-page-wrapper">
+<div class="s-page-content">
+<iframe frameborder="0" id="s-image-share-iframe" marginheight="0" marginwidth="0" src=""></iframe>
+</div>
+</div>
+</div>
+
+<iframe name="strk-tracking" id="strk-tracking" src="ping.html"></iframe>
+<span style="height: 20px; width: 40px; min-height: 20px; min-width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=);"></span><script src="javascripts/nr-476.min.js"></script><script type="text/javascript" src="74f55de04c"></script></body></html>
